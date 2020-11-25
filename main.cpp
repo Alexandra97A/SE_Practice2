@@ -68,6 +68,7 @@ void ten_integers(void){ //could have done sorting first and after the occurrenc
     int most_occurred;
     unsigned int max_count;
     unsigned count;
+    int temp;
 
     cout<<"Please input 10 integers."<<endl;
     for (int i = 0; i<=9; i++)
@@ -91,8 +92,20 @@ void ten_integers(void){ //could have done sorting first and after the occurrenc
             max = array[i];
     cout<<max<<endl;
 
+    for(int i=0;i<= 9;i++)
+        {
+            for(int j=i+1;j<= 9;j++)
+            {
+                if(array[i]>array[j])
+                {
+                    temp  = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+
     cout<<"The most occurred number: ";
-    most_occurred = array[0];
 
     for (int i = 0; i<= 9; i++) {
         count = 1;
@@ -110,11 +123,43 @@ void ten_integers(void){ //could have done sorting first and after the occurrenc
 
 }
 
+void sort_int (void){
+    int array[10];
+    int temp;
+
+    cout<<"Please input 10 integers."<<endl;
+    for (int i = 0; i<=9; i++)
+        cin>>array[i];
+
+    cout<<"The 10 integers are: "<<endl;
+    for (int i = 0; i<=9; i++)
+        cout<<array[i]<<"  ";
+
+    for(int i=0;i<= 9;i++)
+        {
+            for(int j=i+1;j<= 9;j++)
+            {
+                if(array[i]>array[j])
+                {
+                    temp  = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+    cout<<endl<<"Sorted: ";
+    for (int i = 0; i<=9; i++)
+        cout<<array[i]<<"  ";
+
+    cout<<endl<<"occurence: "<<endl;
+
+}
 int main()
 {
     cout << "Hello World!" << endl;
   //  calculator();
 
-    ten_integers();
+//    ten_integers();
+    sort_int();
     return 0;
 }
