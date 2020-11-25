@@ -180,6 +180,17 @@ int *find_max (int array[], int n) {
     return max;
 }
 
+void five_integers() {
+    int array[5];
+    int *p = array;
+
+    cout<<"Please input five numbers: ";
+    cin>>*p>>*(p+1)>>*(p+2)>>*(p+3)>>*(p+4);
+
+    for(int i = 0; i < 5; i++)
+        cout<<array[i]<<"  ";
+    cout<<endl;
+}
 int main()
 {
    int n, i, *p;
@@ -210,5 +221,6 @@ int main()
    cout<<"The max is: "<<*p;
    cout<<endl;
 
+   five_integers();
     return 0;
 }
