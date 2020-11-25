@@ -191,6 +191,19 @@ void five_integers() {
         cout<<array[i]<<"  ";
     cout<<endl;
 }
+
+int *sort_ascending(int *p, int n){
+    int temp;
+    for(int i=0; i<n; i++)
+        for(int j = i + 1; j < n; j++)
+            if (*(p+j) < *(p + i)){
+             temp = *(p+j);
+             *(p+j) = *(p+i);
+             *(p+i) = temp;
+            }
+    return p;
+}
+
 int main()
 {
    int n, i, *p;
@@ -222,5 +235,17 @@ int main()
    cout<<endl;
 
    five_integers();
+
+   int array2[] = {1, 5, 7, 9, 81, 10, 15, 19, 9, 10};
+   cout<<"array2"<<endl;
+   for(int i = 0; i<10; i++) {
+       cout<<array2[i]<<" ";
+   }
+   cout<<endl<<"Sorted array2:"<<endl;
+   int *pointer = sort_ascending(array2, 10);
+
+   for (int i=0; i<10; i++)
+       cout<<*(pointer+i)<<"   ";
+
     return 0;
 }
