@@ -184,16 +184,19 @@ int main()
 {
    int n, i, *p;
 
-   cout<<"Input n for the array: ";
+   cout<<" Enter number of data values: ";
    cin>>n;
 
    cout<<endl;
    int array[n];
 
-   cout<<"Please input 10 integers."<<endl;
-   for (int i = 0; i<n; i++)
-       cin>>array[i];
 
+   cout<<"Please input 10 integers."<<endl;
+   for (int i = 0; i<n; i++){
+       cout<<"Enter value "<<i+1<<": ";
+       cin>>array[i];
+       cout<<endl;
+    }
    cout<<"The 10 integers are: "<<endl;
    for (int i = 0; i<n; i++)
        cout<<array[i]<<"  ";
@@ -204,7 +207,7 @@ int main()
 //    pascal_triangle(5);
 
    p =find_max(array,n);
-   cout<<"THe greatest value in the array is: "<<*p;
+   cout<<"The max is: "<<*p;
    cout<<endl;
 
     return 0;
