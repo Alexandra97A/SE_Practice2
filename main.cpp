@@ -154,12 +154,32 @@ void sort_int (void){
     cout<<endl<<"occurence: "<<endl;
 
 }
+
+void pascal_triangle(int rows) {
+    int cnt;
+
+    for (int i = 0; i< rows; i++){
+        cnt = 1;
+
+        for(int j=0; j<=i;j++) {
+            cout<<cnt<<" ";
+            cnt = (cnt*(i-j) / (j+1));
+        }
+        cout<<endl;
+    }
+
+}
+
+
 int main()
 {
     cout << "Hello World!" << endl;
   //  calculator();
 
 //    ten_integers();
-    sort_int();
+//    sort_int();
+    pascal_triangle(5);
+    cout<<endl;
+
     return 0;
 }
