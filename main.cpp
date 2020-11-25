@@ -170,16 +170,42 @@ void pascal_triangle(int rows) {
 
 }
 
+int *find_max (int array[], int n) {
+    int *max = array;
+
+    for(int i = 1; i<n; i++){
+        if(*max < *(max+i))
+            *max = *(max+i);
+    }
+    return max;
+}
 
 int main()
 {
-    cout << "Hello World!" << endl;
+   int n, i, *p;
+
+   cout<<"Input n for the array: ";
+   cin>>n;
+
+   cout<<endl;
+   int array[n];
+
+   cout<<"Please input 10 integers."<<endl;
+   for (int i = 0; i<n; i++)
+       cin>>array[i];
+
+   cout<<"The 10 integers are: "<<endl;
+   for (int i = 0; i<n; i++)
+       cout<<array[i]<<"  ";
   //  calculator();
 
 //    ten_integers();
 //    sort_int();
-    pascal_triangle(5);
-    cout<<endl;
+//    pascal_triangle(5);
+
+   p =find_max(array,n);
+   cout<<"THe greatest value in the array is: "<<*p;
+   cout<<endl;
 
     return 0;
 }
