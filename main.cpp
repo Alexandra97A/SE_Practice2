@@ -1,4 +1,5 @@
 #include <iostream>
+#include<math.h>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ void print_calculator(void){
     cout<<"5.Modulus"<<endl;
     cout<<""<<endl;
 }
-void calculator() {
+void calculator(void) {
 
     unsigned int choice;
     int nr1, nr2;
@@ -61,11 +62,59 @@ void calculator() {
     }
 }
 
+void ten_integers(void){ //could have done sorting first and after the occurrence
+    int array[10];
+    int min, max;
+    int most_occurred;
+    unsigned int max_count;
+    unsigned count;
 
+    cout<<"Please input 10 integers."<<endl;
+    for (int i = 0; i<=9; i++)
+        cin>>array[i];
+
+    cout<<"The 10 integers are: "<<endl;
+    for (int i = 0; i<=9; i++)
+        cout<<array[i]<<"  ";
+
+    cout<<"The smallest inputed integer is: ";
+    min = array[0];
+    for (int i = 1; i<= 9; i++)
+        if(min > array[i])
+            min = array[i];
+    cout<<min<<endl;
+
+    cout<<"The greatest inputed integer is: ";
+    max = array[0];
+    for (int i = 1; i<= 9; i++)
+        if(max < array[i])
+            max = array[i];
+    cout<<max<<endl;
+
+    cout<<"The most occurred number: ";
+    most_occurred = array[0];
+
+    for (int i = 0; i<= 9; i++) {
+        count = 1;
+        for (int j = i + 1; j <= 9 ; j++) {
+            if(array[i] == array [j])
+                count++;
+        }
+
+        if (count > max_count) {
+            max_count = count;
+            most_occurred = array[i];
+        }
+    }
+    cout<<most_occurred<<" with an occurrence of "<<max_count<<" times."<<endl;
+
+}
 
 int main()
 {
     cout << "Hello World!" << endl;
-    calculator();
+  //  calculator();
+
+    ten_integers();
     return 0;
 }
